@@ -81,23 +81,7 @@ window.addEventListener('DOMContentLoaded', function () {
         };
     });
 
-    // function sendform() {
-    //     if (document.forms[0].name.value == "") {
-    //         alert('Пожалуйста, введите Ваше имя');
-    //         document.mailform.name.focus();
-    //         return false
-    //     }
-
-    //     if (document.forms[0].email.value == "") {
-    //         alert('Пожалуйста, введите электронный адрес');
-    //         document.mailform.email.focus();
-    //         return false
-    //     }
-
-    //     return true;
-    // }
     let elem = document.querySelector('#input');
-
     console.log(elem.value);
 
     document.querySelector(".blog_button").addEventListener('click', function (e) {
@@ -106,7 +90,8 @@ window.addEventListener('DOMContentLoaded', function () {
         var re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
         if (re.test(elem.value)) {
             document.querySelector(".blog_modal").classList.remove('none');
-            document.querySelector('.blog_input').classList.remove('invalid')
+            document.querySelector('.blog_input').classList.remove('invalid');
+            elem.value = '';
         }
         else {
             document.querySelector('.blog_input').classList.add('invalid')
